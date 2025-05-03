@@ -20,33 +20,33 @@ final List<MenuItem> menuCategories = [
   MenuItem(
       name: 'Coffee',
       category: 'Drinks',
-      description: 'Will get you full',
+      description: 'Tasty',
       price: 12.99),
   MenuItem(
       name: 'Tea',
       category: 'Drinks',
-      description: 'Will get you full',
+      description: 'Tasty',
       price: 12.99),
   MenuItem(
       name: 'Juice',
       category: 'Drinks',
-      description: 'Will get you full',
+      description: 'Tasty',
       price: 12.99),
 //.............................................
   MenuItem(
       name: 'Ice Cream',
       category: 'Desert',
-      description: 'Will get you full',
+      description: 'Sweet',
       price: 12.99),
   MenuItem(
       name: 'Chocolate Cake',
       category: 'Desert',
-      description: 'Will get you full',
+      description: 'Sweet',
       price: 12.99),
   MenuItem(
       name: 'Cheesecake',
       category: 'Desert',
-      description: 'Will get you full',
+      description: 'Sweet',
       price: 12.99),
 ];
 

@@ -32,6 +32,10 @@ class DrinksPage extends StatelessWidget {
                     );
                   },
                   child: Card(
+                    color: Colors.blueGrey,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     child: ListTile(
                       title: Text(meal.name),
                       subtitle: Text(meal.description),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:map_app/Pages/deserts_page.dart';
 import 'package:map_app/Pages/drinks_page.dart';
-import 'package:map_app/Pages/meal_page.dart';
+import 'package:map_app/Pages/meals_page.dart';
 import 'package:map_app/Widgets/reusable_widgets.dart';
 
 class HomePage extends StatelessWidget {
