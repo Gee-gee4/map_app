@@ -16,6 +16,7 @@ final List<MenuItem> menuCategories = [
       category: 'Meals',
       description: 'Will get you full',
       price: 12.99),
+  //.............................................
   MenuItem(
       name: 'Coffee',
       category: 'Drinks',
@@ -31,6 +32,7 @@ final List<MenuItem> menuCategories = [
       category: 'Drinks',
       description: 'Will get you full',
       price: 12.99),
+//.............................................
   MenuItem(
       name: 'Ice Cream',
       category: 'Desert',

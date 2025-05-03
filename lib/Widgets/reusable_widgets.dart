@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-SizedBox myListView(String myText) {
+SizedBox myListView(String myText, Function()? onTap) {
   return SizedBox(
     height: 80,
     width: 200,
@@ -8,9 +8,7 @@ SizedBox myListView(String myText) {
       children: [
         InkWell(
           borderRadius: BorderRadius.circular(12),
-          onTap: () {
-            
-          },
+          onTap: onTap,
           child: Card(
             color: Colors.green,
             child: ListTile(
