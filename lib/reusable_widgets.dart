@@ -6,9 +6,19 @@ SizedBox myListView(String myText) {
     width: 200,
     child: ListView(
       children: [
-        Card(
-          child: ListTile(
-           title: Text(myText),
+        InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: () {
+            
+          },
+          child: Card(
+            color: Colors.green,
+            child: ListTile(
+              title: Text(
+                myText,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
         ),
       ],
