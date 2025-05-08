@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:map_app/Model/menu_item.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -8,6 +10,13 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
+  late Box<MenuItem> cartBox;
+  @override
+  void initState() {
+    super.initState();
+    cartBox = Hive.box<MenuItem>('myCartBox');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,23 +24,23 @@ class _CartPageState extends State<CartPage> {
         title: Text('My Cart'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Card(
-              color: Colors.blueGrey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: ListTile(
-                leading: Text('Food'),
-                title: Text('Quantity:'),
-              ),
+      body: cartBox.isEmpty
+          ? Center(child: Text('Cart is empty'))
+          : ListView.builder(
+              itemBuilder: (context, index) {
+                final item = cartBox.getAt(index);
+                if (item == null) return SizedBox();
+                return Card(
+                  margin: EdgeInsets.all(8),
+                  child: ListTile(
+                    title: Text(item.name),
+                    subtitle: Text(item.description),
+                    trailing: Text('\$${item.price.toStringAsFixed(2)}'),
+                  ),
+                );
+              },
+              itemCount: cartBox.length,
             ),
-          ],
-        ),
-      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:map_app/Model/menu_data.dart';
 import 'package:map_app/Model/menu_item.dart';
 import 'package:map_app/Pages/cart_page.dart';
@@ -46,7 +47,10 @@ class DesertsPage extends StatelessWidget {
                       ),
                       trailing: IconButton(
                         icon: Icon(Icons.add_circle),
-                        onPressed: () {},
+                        onPressed: () {
+                          final box = Hive.box<MenuItem>('myCartBox');
+                          box.add(meal);
+                        },
                         style: IconButton.styleFrom(iconSize: 22),
                       ),
                     ),

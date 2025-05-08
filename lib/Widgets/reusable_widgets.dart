@@ -42,16 +42,17 @@ AppBar myAppBar(Text myText, {Function()? onPressed}) {
 }
 
 //------------------------------------------------------------------------------------
-ElevatedButton myButton(Text buttonText,Function()? onPressed) {
+ElevatedButton myButton(Text buttonText, Function()? onPressed) {
   return ElevatedButton(
-    onPressed: onPressed,
-    style: ElevatedButton.styleFrom(
-        elevation: 1,
-        padding: EdgeInsets.all(18),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        backgroundColor: Colors.amber[500]),
-    child: buttonText
-  );
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+          elevation: 1,
+          padding: EdgeInsets.all(18),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          backgroundColor: Colors.amber[500]),
+      child: buttonText);
 }
+
+//------------------------------------------------------------------------------------
