@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:map_app/Pages/cart_page.dart';
 import 'package:map_app/Pages/deserts_page.dart';
 import 'package:map_app/Pages/drinks_page.dart';
 import 'package:map_app/Pages/meals_page.dart';
@@ -10,16 +11,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Page'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () {},
-            style: IconButton.styleFrom(iconSize: 22),
-          ),
-        ],
+      appBar: myAppBar(
+        Text(
+          'Home Page',
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CartPage(),
+            ),
+          );
+        },
       ),
       body: Center(
         child: Column(

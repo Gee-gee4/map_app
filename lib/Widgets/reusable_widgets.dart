@@ -23,3 +23,35 @@ SizedBox myListView(String myText, Function()? onTap) {
     ),
   );
 }
+
+//------------------------------------------------------------------------------------
+AppBar myAppBar(Text myText, {Function()? onPressed}) {
+  return AppBar(
+    title: myText,
+    centerTitle: true,
+    actions: onPressed != null
+        ? [
+            IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: onPressed,
+              style: IconButton.styleFrom(iconSize: 22),
+            ),
+          ]
+        : null,
+  );
+}
+
+//------------------------------------------------------------------------------------
+ElevatedButton myButton(Text buttonText,Function()? onPressed) {
+  return ElevatedButton(
+    onPressed: onPressed,
+    style: ElevatedButton.styleFrom(
+        elevation: 1,
+        padding: EdgeInsets.all(18),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        backgroundColor: Colors.amber[500]),
+    child: buttonText
+  );
+}

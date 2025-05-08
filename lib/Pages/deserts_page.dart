@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:map_app/Model/menu_data.dart';
 import 'package:map_app/Model/menu_item.dart';
+import 'package:map_app/Pages/cart_page.dart';
 import 'package:map_app/Pages/details_page.dart';
+import 'package:map_app/Widgets/reusable_widgets.dart';
 
 class DesertsPage extends StatelessWidget {
   const DesertsPage({super.key});
@@ -11,14 +13,13 @@ class DesertsPage extends StatelessWidget {
     final List<MenuItem> deserts =
         menuCategories.where((item) => item.category == 'Desert').toList();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Desert Page'),
-        centerTitle: true,
+      appBar: myAppBar(
+        Text('Desert Page'),
       ),
       body: Column(
         children: [
           SizedBox(
-            height: 600,
+            height: 250,
             child: ListView.builder(
               itemBuilder: (context, index) {
                 final meal = deserts[index];
@@ -44,7 +45,7 @@ class DesertsPage extends StatelessWidget {
                         style: TextStyle(fontSize: 12),
                       ),
                       trailing: IconButton(
-                        icon: Icon(Icons.shopping_cart),
+                        icon: Icon(Icons.add_circle),
                         onPressed: () {},
                         style: IconButton.styleFrom(iconSize: 22),
                       ),
@@ -54,6 +55,21 @@ class DesertsPage extends StatelessWidget {
               },
               itemCount: deserts.length,
             ),
+          ),
+          myButton(
+            Text(
+              'Go to Cart',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CartPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
