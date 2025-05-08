@@ -2,12 +2,12 @@ import 'package:map_app/Model/menu_item.dart';
 
 final List<MenuItem> menuCategories = [
   MenuItem(
-      name: 'Grilled Chicken',
+      name: 'Grilled \nChicken',
       category: 'Meals',
       description: 'Will get you full',
       price: 12.99),
   MenuItem(
-      name: 'Beef Burger',
+      name: 'Beef \nBurger',
       category: 'Meals',
       description: 'Will get you full',
       price: 12.99),
@@ -39,7 +39,7 @@ final List<MenuItem> menuCategories = [
       description: 'Sweet',
       price: 12.99),
   MenuItem(
-      name: 'Chocolate Cake',
+      name: 'Chocolate \nCake',
       category: 'Desert',
       description: 'Sweet',
       price: 12.99),

@@ -11,7 +11,7 @@ class DrinksPage extends StatelessWidget {
     final List<MenuItem> drinks =
         menuCategories.where((item) => item.category == 'Drinks').toList();
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         title: Text('Drinks Page'),
         centerTitle: true,
       ),
@@ -23,7 +23,7 @@ class DrinksPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 final meal = drinks[index];
                 return InkWell(
-                   onTap: () {
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -37,9 +37,17 @@ class DrinksPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: ListTile(
-                      title: Text(meal.name),
-                      subtitle: Text(meal.description),
-                      trailing: Text(meal.price.toString()),
+                      leading: Text(meal.name),
+                      title: Text(meal.description),
+                      subtitle: Text(
+                        (meal.price).toString(),
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      trailing: IconButton(
+                        icon: Icon(Icons.shopping_cart),
+                        onPressed: () {},
+                        style: IconButton.styleFrom(iconSize: 22),
+                      ),
                     ),
                   ),
                 );

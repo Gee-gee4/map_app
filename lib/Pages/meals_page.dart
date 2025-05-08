@@ -37,9 +37,17 @@ class MealPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: ListTile(
-                      title: Text(meal.name),
-                      subtitle: Text(meal.description),
-                      trailing: Text(meal.price.toString()),
+                      leading: Text(meal.name),
+                      title: Text(meal.description),
+                      subtitle: Text(
+                        (meal.price).toString(),
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      trailing: IconButton(
+                        icon: Icon(Icons.shopping_cart),
+                        onPressed: () {},
+                        style: IconButton.styleFrom(iconSize: 22),
+                      ),
                     ),
                   ),
                 );

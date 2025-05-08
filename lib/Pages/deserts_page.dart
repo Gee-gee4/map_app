@@ -12,7 +12,7 @@ class DesertsPage extends StatelessWidget {
         menuCategories.where((item) => item.category == 'Desert').toList();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Drinks Page'),
+        title: Text('Desert Page'),
         centerTitle: true,
       ),
       body: Column(
@@ -37,10 +37,17 @@ class DesertsPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: ListTile(
-                      
-                      title: Text(meal.name),
-                      subtitle: Text(meal.description),
-                      trailing: Text(meal.price.toString()),
+                      leading: Text(meal.name),
+                      title: Text(meal.description),
+                      subtitle: Text(
+                        (meal.price).toString(),
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      trailing: IconButton(
+                        icon: Icon(Icons.shopping_cart),
+                        onPressed: () {},
+                        style: IconButton.styleFrom(iconSize: 22),
+                      ),
                     ),
                   ),
                 );
